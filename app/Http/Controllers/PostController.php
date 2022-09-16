@@ -14,11 +14,13 @@ class PostController extends Controller
             "posts" => Post::all()
         ]);
     }
-    public function show($id)
+    public function show(Post $post)
     {
         return view('/posts/post', [
             "title" => "Single Post",
-            "post" => Post::find($id)
+            //gabutuh ini kalo sudah menggunakan binding route model binding
+            // "post" => Post::find($post->id)
+            "post" => $post
         ]);
     }
 }
